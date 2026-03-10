@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet Taborda Avocat | Défense des Salariés à Clermont-Ferrand</title>
+    <meta name="description" content="Maître Cédric Taborda, avocat en droit du travail à Chamalières. 14 ans d'expérience syndicale. Défense exclusive des salariés, fonctionnaires et agents publics. 95 EUR TTC.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        noir: '#0A0A0A',
+                        rouge: '#C41E24',
+                        'rouge-dark': '#8B1519',
+                        'rouge-light': '#E8353C',
+                        'rouge-glow': '#FF2D35',
+                        gris: '#1A1A1A',
+                        'gris-light': '#2A2A2A',
+                        'gris-text': '#888888',
+                        blanc: '#F5F5F5',
+                    },
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-left.visible { opacity: 1; transform: translateX(0); }
+        html { scroll-behavior: smooth; }
+        .hero-bold { background: #0A0A0A; position: relative; overflow: hidden; }
+        .hero-bold::before { content: ''; position: absolute; top: -50%; right: -20%; width: 80%; height: 200%; background: radial-gradient(ellipse, rgba(196,30,36,0.08) 0%, transparent 60%); }
+        .red-line { height: 3px; background: linear-gradient(90deg, #C41E24, transparent); }
+        .strike-card { border-left: 3px solid #C41E24; transition: all 0.3s ease; }
+        .strike-card:hover { background: rgba(196,30,36,0.05); transform: translateX(8px); }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .faq-content.open { max-height: 500px; }
+        .faq-icon { transition: transform 0.3s ease; display: inline-block; }
+        .faq-icon.rotate { transform: rotate(45deg); }
+        .stat-box { border: 1px solid rgba(196,30,36,0.2); }
+        .stat-box:hover { border-color: rgba(196,30,36,0.6); background: rgba(196,30,36,0.03); }
+        @keyframes pulse-red { 0%, 100% { box-shadow: 0 0 0 0 rgba(196,30,36,0.3); } 50% { box-shadow: 0 0 20px 5px rgba(196,30,36,0.1); } }
+        .pulse-dot { animation: pulse-red 3s ease-in-out infinite; }
+        .text-strike { text-decoration: line-through; text-decoration-color: #C41E24; }
+        .bold-number { font-size: 8rem; font-weight: 900; line-height: 1; color: rgba(196,30,36,0.06); position: absolute; top: -20px; right: 20px; }
+    </style>
+</head>
+<body class="font-sans text-blanc bg-noir">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-noir/95 backdrop-blur-md border-b border-gris-light/50" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-rouge rounded flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">T</span>
+                </div>
+                <div>
+                    <div class="font-bold text-white text-lg tracking-tight">TABORDA</div>
+                    <div class="text-xs text-gris-text tracking-widest uppercase">Avocat</div>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#combat" class="text-sm text-gris-text hover:text-rouge transition-colors">Combats</a>
+                <a href="#parcours" class="text-sm text-gris-text hover:text-rouge transition-colors">Parcours</a>
+                <a href="#temoignages" class="text-sm text-gris-text hover:text-rouge transition-colors">Témoignages</a>
+                <a href="#faq" class="text-sm text-gris-text hover:text-rouge transition-colors">FAQ</a>
+                <a href="#contact" class="bg-rouge text-white px-6 py-2.5 rounded text-sm font-bold hover:bg-rouge-light transition-colors">Consultation 95 EUR</a>
+            </div>
+            <button class="md:hidden text-white" onclick="document.getElementById('mob-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mob-menu" class="hidden md:hidden bg-noir border-t border-gris-light px-6 py-4">
+            <a href="#combat" class="block py-2 text-gris-text">Combats</a>
+            <a href="#parcours" class="block py-2 text-gris-text">Parcours</a>
+            <a href="#temoignages" class="block py-2 text-gris-text">Témoignages</a>
+            <a href="#faq" class="block py-2 text-gris-text">FAQ</a>
+            <a href="#contact" class="block mt-3 bg-rouge text-white px-6 py-2.5 rounded text-sm font-bold text-center">Consultation 95 EUR</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-bold min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-6 pt-28 pb-20 relative z-10">
+            <div class="max-w-4xl">
+                <div class="flex items-center gap-3 mb-6 fade-up">
+                    <div class="w-3 h-3 bg-rouge rounded-full pulse-dot"></div>
+                    <span class="text-rouge text-sm font-bold uppercase tracking-widest">Défense exclusive des salariés</span>
+                </div>
+                <h1 class="text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-none mb-2 fade-up">
+                    VOS DROITS.
+                </h1>
+                <h1 class="text-6xl lg:text-7xl xl:text-8xl font-black leading-none mb-2 fade-up">
+                    <span class="text-rouge">NOTRE</span> <span class="text-white">COMBAT.</span>
+                </h1>
+                <div class="red-line w-32 my-8 fade-up"></div>
+                <p class="text-xl text-gris-text leading-relaxed max-w-2xl mb-10 fade-up">
+                    14 ans de combat syndical. Aujourd'hui avocat. Maître Cédric Taborda défend exclusivement les salariés, fonctionnaires et agents publics à Clermont-Ferrand.
+                </p>
+                <div class="flex flex-wrap gap-4 fade-up">
+                    <a href="#contact" class="bg-rouge text-white px-8 py-4 rounded font-bold text-lg hover:bg-rouge-light transition-all hover:shadow-lg hover:shadow-rouge/20">Consultation -- 95 EUR TTC</a>
+                    <a href="#combat" class="border border-gris-light text-gris-text px-8 py-4 rounded font-bold text-lg hover:border-rouge/50 hover:text-rouge transition-all">Mes combats</a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 fade-up">
+                <div class="stat-box rounded-lg p-5 text-center transition-all">
+                    <div class="text-3xl font-black text-rouge">14</div>
+                    <div class="text-gris-text text-xs mt-1 uppercase tracking-wider">Ans de terrain syndical</div>
+                </div>
+                <div class="stat-box rounded-lg p-5 text-center transition-all">
+                    <div class="text-3xl font-black text-rouge">95 EUR</div>
+                    <div class="text-gris-text text-xs mt-1 uppercase tracking-wider">Consultation TTC</div>
+                </div>
+                <div class="stat-box rounded-lg p-5 text-center transition-all">
+                    <div class="text-3xl font-black text-rouge">100%</div>
+                    <div class="text-gris-text text-xs mt-1 uppercase tracking-wider">Côté salariés</div>
+                </div>
+                <div class="stat-box rounded-lg p-5 text-center transition-all">
+                    <div class="text-3xl font-black text-rouge">AJ</div>
+                    <div class="text-gris-text text-xs mt-1 uppercase tracking-wider">Aide juridictionnelle</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combats / Services -->
+    <section id="combat" class="py-24 bg-gris">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 fade-up">
+                <span class="text-rouge font-bold text-sm uppercase tracking-widest">Domaines de combat</span>
+                <h2 class="text-4xl lg:text-5xl font-black text-white mt-3">QUATRE ARMES <span class="text-rouge">JURIDIQUES</span></h2>
+                <div class="red-line w-24 mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="strike-card bg-noir rounded-xl p-8 relative overflow-hidden fade-up">
+                    <div class="bold-number">01</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-black text-white mb-3">Droit du travail</h3>
+                        <p class="text-gris-text leading-relaxed mb-4">Licenciement abusif, harcèlement moral ou sexuel, discrimination, heures supplémentaires impayées, rupture conventionnelle, prud'hommes. Je me bats pour que chaque salarié obtienne justice.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Licenciement sans cause réelle</li>
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Harcèlement et discrimination</li>
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Rappels de salaire et heures sup</li>
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Rupture conventionnelle négociée</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="strike-card bg-noir rounded-xl p-8 relative overflow-hidden fade-up" style="transition-delay:0.1s">
+                    <div class="bold-number">02</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-black text-white mb-3">Sécurité sociale</h3>
+                        <p class="text-gris-text leading-relaxed mb-4">Accidents du travail, maladies professionnelles, invalidité, contestation de décisions CPAM. Protection de vos droits sociaux face aux organismes.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Accident du travail</li>
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Maladie professionnelle</li>
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Contestation invalidité</li>
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Recours CPAM / MDPH</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="strike-card bg-noir rounded-xl p-8 relative overflow-hidden fade-up">
+                    <div class="bold-number">03</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-black text-white mb-3">Droit pénal du travail</h3>
+                        <p class="text-gris-text leading-relaxed mb-4">Travail dissimulé, manquements à la sécurité, délit d'entrave, infractions au Code du travail. Quand l'employeur franchit la ligne rouge.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Travail dissimulé</li>
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Mise en danger des salariés</li>
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Délit d'entrave syndicale</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="strike-card bg-noir rounded-xl p-8 relative overflow-hidden fade-up" style="transition-delay:0.1s">
+                    <div class="bold-number">04</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-black text-white mb-3">Fonction publique</h3>
+                        <p class="text-gris-text leading-relaxed mb-4">Défense des fonctionnaires et agents publics : sanctions disciplinaires, mutations forcées, non-renouvellement de contrat, harcèlement institutionnel.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Sanctions disciplinaires</li>
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Contractuels et CDD publics</li>
+                            <li class="flex items-center gap-2 text-sm text-gris-text"><span class="w-1.5 h-1.5 bg-rouge rounded-full"></span>Harcèlement dans la fonction publique</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parcours -->
+    <section id="parcours" class="py-24 bg-noir relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-rouge via-rouge-dark to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-left">
+                    <span class="text-rouge font-bold text-sm uppercase tracking-widest">Parcours</span>
+                    <h2 class="text-4xl lg:text-5xl font-black text-white mt-3 mb-6">DU SYNDICAT <span class="text-rouge">AU BARREAU</span></h2>
+                    <div class="red-line w-24 mb-8"></div>
+                    <p class="text-gris-text leading-relaxed text-lg mb-6">
+                        Pendant 14 ans, j'ai défendu les salariés comme juriste CGT. J'ai vu de l'intérieur comment le droit du travail est trop souvent détourné au détriment de ceux qu'il devrait protéger.
+                    </p>
+                    <p class="text-gris-text leading-relaxed mb-6">
+                        En 2024, j'ai prêté serment pour porter ce combat devant les tribunaux. Mon cabinet, ouvert en janvier 2025, est entièrement consacré à la défense des travailleurs.
+                    </p>
+                    <p class="text-gris-text leading-relaxed mb-8">
+                        Je ne défends <strong class="text-white">jamais les employeurs</strong>. C'est un choix délibéré : pour être un véritable allié de mes clients, je dois être exclusivement de leur côté.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-px h-16 bg-rouge"></div>
+                        <div>
+                            <div class="text-white font-bold">"Le droit du travail n'est pas un luxe.</div>
+                            <div class="text-rouge italic">C'est une nécessité."</div>
+                            <div class="text-gris-text text-sm mt-1">-- Me Cédric Taborda</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-up">
+                    <div class="space-y-6">
+                        <div class="bg-gris rounded-xl p-6 border border-gris-light">
+                            <div class="flex items-center gap-4">
+                                <div class="text-4xl font-black text-rouge">14</div>
+                                <div>
+                                    <div class="text-white font-bold">Années de terrain</div>
+                                    <div class="text-gris-text text-sm">Juriste CGT -- défense des droits des travailleurs sur le terrain</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gris rounded-xl p-6 border border-gris-light">
+                            <div class="flex items-center gap-4">
+                                <div class="text-4xl font-black text-rouge">2024</div>
+                                <div>
+                                    <div class="text-white font-bold">Serment d'avocat</div>
+                                    <div class="text-gris-text text-sm">Barreau de Clermont-Ferrand -- le combat continue par le droit</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gris rounded-xl p-6 border border-gris-light">
+                            <div class="flex items-center gap-4">
+                                <div class="text-4xl font-black text-rouge">95</div>
+                                <div>
+                                    <div class="text-white font-bold">Euros TTC la consultation</div>
+                                    <div class="text-gris-text text-sm">Un tarif accessible parce que la justice ne doit pas être réservée aux riches</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gris rounded-xl p-6 border border-gris-light">
+                            <div class="flex items-center gap-4">
+                                <div class="text-4xl font-black text-rouge">AJ</div>
+                                <div>
+                                    <div class="text-white font-bold">Aide juridictionnelle</div>
+                                    <div class="text-gris-text text-sm">Acceptée -- parce que tout le monde a droit à un avocat</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temoignages Section -->
+    <section id="temoignages" class="py-24 bg-noir">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 fade-up">
+                <span class="text-rouge font-bold text-sm uppercase tracking-widest">Temoignages</span>
+                <h2 class="text-4xl lg:text-5xl font-black text-white mt-3">ILS ONT <span class="text-rouge">GAGNE</span></h2>
+                <p class="text-gris-text mt-4 max-w-xl">Des salaries qui ont refuse l'injustice. Leurs mots, pas les notres.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gris rounded-xl p-8 border-l-4 border-rouge fade-up">
+                    <div class="text-rouge text-2xl mb-4">*****</div>
+                    <p class="text-white italic mb-6">"Mon employeur m'a licencie apres 12 ans sans motif reel. Maitre Taborda a obtenu 18 mois d'indemnites aux prud'hommes. Sans lui, j'aurais accepte les 3 mois qu'on me proposait."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-rouge flex items-center justify-center text-white font-bold">SM</div>
+                        <div>
+                            <div class="text-white font-bold text-sm">Sophie M.</div>
+                            <div class="text-gris-text text-xs">Licenciement abusif - Clermont-Ferrand</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gris rounded-xl p-8 border-l-4 border-rouge fade-up" style="animation-delay:0.1s">
+                    <div class="text-rouge text-2xl mb-4">*****</div>
+                    <p class="text-white italic mb-6">"Harcele par mon superieur pendant 2 ans. Tout le monde fermait les yeux. Maitre Taborda a constitue le dossier et obtenu la resiliation judiciaire. Je revis."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-rouge flex items-center justify-center text-white font-bold">KB</div>
+                        <div>
+                            <div class="text-white font-bold text-sm">Karim B.</div>
+                            <div class="text-gris-text text-xs">Harcelement moral - Riom</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gris rounded-xl p-8 border-l-4 border-rouge fade-up" style="animation-delay:0.2s">
+                    <div class="text-rouge text-2xl mb-4">*****</div>
+                    <p class="text-white italic mb-6">"Accident du travail ignore par mon patron. Maitre Taborda a fait reconnaitre la faute inexcusable. J'ai obtenu la reparation integrale de mon prejudice."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-rouge flex items-center justify-center text-white font-bold">ML</div>
+                        <div>
+                            <div class="text-white font-bold text-sm">Michel L.</div>
+                            <div class="text-gris-text text-xs">Accident du travail - Thiers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-gris">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="mb-16 text-center fade-up">
+                <span class="text-rouge font-bold text-sm uppercase tracking-widest">Questions</span>
+                <h2 class="text-4xl lg:text-5xl font-black text-white mt-3">SANS <span class="text-rouge">DETOUR</span></h2>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-noir rounded-xl border border-gris-light fade-up">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer"><span class="text-white font-bold">Combien coute une premiere consultation ?</span><span class="text-rouge text-xl">+</span></summary>
+                    <div class="px-6 pb-6 text-gris-text">95 euros TTC. Une heure pour faire le point complet sur votre situation, evaluer vos droits et definir une strategie. Pas de surprise, pas de frais caches.</div>
+                </details>
+                <details class="group bg-noir rounded-xl border border-gris-light fade-up">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer"><span class="text-white font-bold">J'ai peur de perdre mon emploi si j'agis. C'est risque ?</span><span class="text-rouge text-xl">+</span></summary>
+                    <div class="px-6 pb-6 text-gris-text">Le Code du travail vous protege contre les represailles. Un salarie qui fait valoir ses droits est protege par la loi. Et dans les faits, un employeur informe que vous etes assiste par un avocat devient souvent beaucoup plus raisonnable.</div>
+                </details>
+                <details class="group bg-noir rounded-xl border border-gris-light fade-up">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer"><span class="text-white font-bold">Je suis eligible a l'aide juridictionnelle ?</span><span class="text-rouge text-xl">+</span></summary>
+                    <div class="px-6 pb-6 text-gris-text">Si vos revenus sont modestes, oui. Maitre Taborda accepte l'aide juridictionnelle -- vos honoraires sont pris en charge totalement ou partiellement par l'Etat. On verifie votre eligibilite des le premier rendez-vous.</div>
+                </details>
+                <details class="group bg-noir rounded-xl border border-gris-light fade-up">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer"><span class="text-white font-bold">Combien de temps dure une procedure aux prud'hommes ?</span><span class="text-rouge text-xl">+</span></summary>
+                    <div class="px-6 pb-6 text-gris-text">Comptez 12 a 18 mois en moyenne. Mais beaucoup de dossiers se reglent en negociation avant l'audience. L'objectif : obtenir le meilleur resultat dans le meilleur delai.</div>
+                </details>
+                <details class="group bg-noir rounded-xl border border-gris-light fade-up">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer"><span class="text-white font-bold">Vous intervenez aussi hors Clermont-Ferrand ?</span><span class="text-rouge text-xl">+</span></summary>
+                    <div class="px-6 pb-6 text-gris-text">Oui. Le cabinet est base a Chamalieres mais Maitre Taborda intervient devant tous les conseils de prud'hommes et tribunaux du Puy-de-Dome et departements limitrophes (Allier, Cantal, Haute-Loire).</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-noir relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-gris to-noir"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-up">
+                    <span class="text-rouge font-bold text-sm uppercase tracking-widest">Contact</span>
+                    <h2 class="text-4xl lg:text-5xl font-black text-white mt-3">PREMIER PAS VERS <span class="text-rouge">VOS DROITS</span></h2>
+                    <p class="text-gris-text mt-6 text-lg">Un appel, un email, un rendez-vous. C'est tout ce qu'il faut pour commencer a se defendre.</p>
+                    <div class="mt-10 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-rouge/20 flex items-center justify-center text-rouge text-xl font-bold">T</div>
+                            <div>
+                                <div class="text-gris-text text-sm">Telephone</div>
+                                <a href="tel:0473000000" class="text-white font-bold text-lg hover:text-rouge transition-colors">04 73 00 00 00</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-rouge/20 flex items-center justify-center text-rouge text-xl font-bold">A</div>
+                            <div>
+                                <div class="text-gris-text text-sm">Adresse</div>
+                                <div class="text-white font-bold">9 avenue de Royat, 63400 Chamalieres</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-rouge/20 flex items-center justify-center text-rouge text-xl font-bold">H</div>
+                            <div>
+                                <div class="text-gris-text text-sm">Horaires</div>
+                                <div class="text-white font-bold">Lun-Ven : 9h - 19h</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-up" style="animation-delay:0.2s">
+                    <form class="bg-gris rounded-2xl p-8 border border-gris-light">
+                        <h3 class="text-white font-black text-xl mb-6">DEMANDE DE RENDEZ-VOUS</h3>
+                        <div class="space-y-4">
+                            <input type="text" placeholder="Votre nom" class="w-full px-4 py-3 bg-noir border border-gris-light rounded-xl text-white placeholder-gris-text focus:border-rouge focus:outline-none transition-colors">
+                            <input type="email" placeholder="Votre email" class="w-full px-4 py-3 bg-noir border border-gris-light rounded-xl text-white placeholder-gris-text focus:border-rouge focus:outline-none transition-colors">
+                            <input type="tel" placeholder="Votre telephone" class="w-full px-4 py-3 bg-noir border border-gris-light rounded-xl text-white placeholder-gris-text focus:border-rouge focus:outline-none transition-colors">
+                            <select class="w-full px-4 py-3 bg-noir border border-gris-light rounded-xl text-gris-text focus:border-rouge focus:outline-none transition-colors">
+                                <option>Type de litige</option>
+                                <option>Licenciement abusif</option>
+                                <option>Harcelement au travail</option>
+                                <option>Accident du travail</option>
+                                <option>Heures supplementaires impayees</option>
+                                <option>Discrimination</option>
+                                <option>Autre</option>
+                            </select>
+                            <textarea rows="4" placeholder="Decrivez brievement votre situation..." class="w-full px-4 py-3 bg-noir border border-gris-light rounded-xl text-white placeholder-gris-text focus:border-rouge focus:outline-none transition-colors resize-none"></textarea>
+                            <button type="submit" class="w-full py-4 bg-rouge text-white font-black text-lg rounded-xl hover:bg-red-700 transition-colors uppercase tracking-wider">Je defends mes droits</button>
+                        </div>
+                        <p class="text-gris-text text-xs mt-4 text-center">Reponse sous 24h -- Consultation a 95 EUR TTC</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-noir border-t border-gris-light py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="font-black text-2xl text-white">TABORDA<span class="text-rouge">.</span></div>
+                    <p class="text-gris-text text-sm mt-3">Avocat en droit du travail. Du cote des salaries, toujours.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#combat" class="text-gris-text hover:text-rouge transition-colors">Domaines</a></li>
+                        <li><a href="#parcours" class="text-gris-text hover:text-rouge transition-colors">Parcours</a></li>
+                        <li><a href="#temoignages" class="text-gris-text hover:text-rouge transition-colors">Temoignages</a></li>
+                        <li><a href="#faq" class="text-gris-text hover:text-rouge transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="text-gris-text">04 73 00 00 00</li>
+                        <li class="text-gris-text">9 av. de Royat, 63400 Chamalieres</li>
+                        <li class="text-gris-text">Lun-Ven : 9h - 19h</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gris-text hover:text-rouge transition-colors">Mentions legales</a></li>
+                        <li><a href="#" class="text-gris-text hover:text-rouge transition-colors">Politique de confidentialite</a></li>
+                        <li class="text-gris-text">Barreau de Clermont-Ferrand</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gris-light mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gris-text text-sm">2025 Cabinet Taborda Avocat. Tous droits reserves.</p>
+                <p class="text-gris-text text-xs">Site vitrine -- Ne constitue pas un conseil juridique</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn=document.getElementById('menu-btn'),mobileMenu=document.getElementById('mobile-menu');
+        let menuOpen=false;
+        menuBtn.addEventListener('click',()=>{menuOpen=!menuOpen;mobileMenu.classList.toggle('hidden');});
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t){t.scrollIntoView({behavior:'smooth',block:'start'});if(menuOpen){mobileMenu.classList.add('hidden');menuOpen=false;}}});});
+        const nav=document.getElementById('navbar');
+        window.addEventListener('scroll',()=>{if(window.scrollY>50){nav.classList.add('bg-noir/95','backdrop-blur-xl','shadow-2xl');nav.classList.remove('bg-transparent');}else{nav.classList.remove('bg-noir/95','backdrop-blur-xl','shadow-2xl');nav.classList.add('bg-transparent');}});
+        const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+        document.querySelectorAll('.fade-up').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity 0.6s ease, transform 0.6s ease';obs.observe(el);});
+        function animateCounters(){document.querySelectorAll('.counter').forEach(c=>{const t=parseInt(c.dataset.target),s=c.dataset.suffix||'',d=2000,st=60,inc=t/st;let cur=0;const timer=setInterval(()=>{cur+=inc;if(cur>=t){c.textContent=t+s;clearInterval(timer);}else{c.textContent=Math.floor(cur)+s;}},d/st);});}
+        const cs=document.getElementById('parcours');if(cs){const co=new IntersectionObserver((e)=>{if(e[0].isIntersecting){animateCounters();co.disconnect();}},{threshold:0.3});co.observe(cs);}
+    </script>
+</body>
+</html>
